@@ -23,4 +23,5 @@ ukraineconflict::read_enriched_oryx_data() %>%
     x = "Classe de Veículo",
     y = "",
     fill = "Tipo de Perda",
-    caption = "Fonte: Oryx Database")
+    caption = "Fonte: Oryx Database") +
+  ukraineconflict::equipment_fill_scale()
