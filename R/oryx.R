@@ -58,7 +58,18 @@ enriched_oryx_data <- function() {
       class = purrr::map_chr(
         system,
         ukraineconflict::system_class)) %>%
-    dplyr::relocate(class, .after = system)
+    dplyr::relocate(class, .after = system) ->
+
+    classified
+
+  logger::log_info("Isolating models from systems.")
+
+  classified %>%
+    dplyr::mutate(
+      model = purrr::map_chr(
+        system,
+        ukraineconflict::model)) %>%
+    dplyr::relocate(model, .after = class)
 
 }
 
