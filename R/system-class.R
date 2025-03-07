@@ -267,7 +267,6 @@ model <- function(system) {
     stringr::str_detect(system, "Switchblade") ~ "Switchblade",
 
     # AA
-    stringr::str_detect(system, "Patriot") ~ "Patriot",
     stringr::str_detect(system, "Iris-T") ~ "Iris-T",
     stringr::str_detect(system, "NASAMs") ~ "NASAMs",
     stringr::str_detect(system, "2K") ~ stringr::str_extract(system, "2K\\d+"),
