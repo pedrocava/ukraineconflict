@@ -19,7 +19,8 @@ ukraineconflict::read_enriched_oryx_data() %>%
   ggplot2::geom_bar(stat = "identity") +
   ggplot2::theme_minimal() +
   ggplot2::labs(
-    title = "Perdas russas de equipamento, 22/02/2022 - 10/04/2022",
+    title = "Perdas russas de equipamento",
+    subtitle = "22/02/2022 - 10/04/2022",
     x = "Classe de Veículo",
     y = "",
     fill = "Tipo de Perda",
