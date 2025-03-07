@@ -298,6 +298,11 @@ model <- function(system) {
     stringr::str_detect(system, "Tu-") ~ stringr::str_extract(system, "Tu-\\d+"),
 
     # Default case
-    TRUE ~ "Unknown"
-  )
+    TRUE ~ "Unknown") ->
+    output
+
+  logger::log_info("{system} mapped as {output}")
+
+  output
+
 }
