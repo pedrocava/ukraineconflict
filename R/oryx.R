@@ -61,3 +61,25 @@ enriched_oryx_data <- function() {
     dplyr::relocate(class, .after = system)
 
 }
+
+#' @export
+#' @name write_enriched_oryx_data
+#'
+
+write_enriched_oryx_data <- function() {
+
+  ukraineconflict::enriched_oryx_data() %>%
+    saveRDS("data/clean/classified_oryx_data.Rds")
+
+}
+
+
+#' @export
+#' @name read_enriched_oryx_data
+#'
+
+read_enriched_oryx_data <- function() {
+
+  readRDS("data/clean/classified_oryx_data.Rds")
+
+}
