@@ -148,8 +148,8 @@ is_motorized <- function(system) {
     "GAZ",
     "ZiL",
     "HMMV",
-    "UAZ-469"
-    ) %>%
+    "UAZ-469",
+    "truck") %>%
     purrr::some(~ stringr::str_detect(system, .x))
 
 }
@@ -191,7 +191,7 @@ system_class <- function(system) {
     output
 
   logger::log_debug(
-    "Classifying: {system}. Infered class: {output}")
+    "Classifying {system} as {output}.")
 
   output
 
