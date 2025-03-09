@@ -19,8 +19,9 @@ ukraineconflict::read_enriched_oryx_data() %>%
   ggplot2::geom_bar(stat = "identity") +
   ggplot2::theme_minimal() +
   ggplot2::labs(
-    x = "Modelo de equipamento",
+    x = "",
     subtitle = "22/02/2022 - 10/04/2022",
     y = "",
+    fill = "Classe de equipamento",
     title = "Equipamento russo capturado, por modelo",
     caption = "Fonte: Oryx Database")
