@@ -1,6 +1,6 @@
 
 
-ukraineconflict::read_enriched_oryx_data() %>%
+(ukraineconflict::read_enriched_oryx_data() %>%
   dplyr::filter(
     country == "Russia",
     date <= lubridate::dmy(10042022)) %>%
@@ -25,4 +25,9 @@ ukraineconflict::read_enriched_oryx_data() %>%
     y = "",
     fill = "Tipo de Perda",
     caption = "Fonte: Oryx Database") +
-  ukraineconflict::equipment_fill_scale()
+  ukraineconflict::equipment_fill_scale()) %T>%
+  ggplot2::ggsave(
+    "plots/early_war_captures.png",
+    plot = .,
+    width = 3,
+    height = 3/1.61)
