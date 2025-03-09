@@ -2,12 +2,9 @@
 % Please edit documentation in R/utils-pipe.R
 \name{\%>\%}
 \alias{\%>\%}
-\alias{\%$\%}
 \title{Pipe operator}
 \usage{
 lhs \%>\% rhs
-
-lhs \%$\% rhs
 }
 \arguments{
 \item{lhs}{A value or the magrittr placeholder.}
@@ -16,12 +13,8 @@ lhs \%$\% rhs
 }
 \value{
 The result of calling \code{rhs(lhs)}.
-
-The result of calling \code{rhs(lhs)}.
 }
 \description{
 See \code{magrittr::\link[magrittr:pipe]{\%>\%}} for details.
-
-See \code{magrittr::\link[magrittr:pipe]{\%$\%}} for details.
 }
 \keyword{internal}
