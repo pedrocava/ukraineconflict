@@ -28,7 +28,9 @@ is_ifv <- function(system) {
   c(
     "BMP-",
     "CV-90",
-    "Bradley") %>%
+    "Bradley",
+    "YPR-",
+    "Marder") %>%
     purrr::some(~ stringr::str_detect(system, .x))
 
 }
@@ -242,6 +244,7 @@ model <- function(system) {
     stringr::str_detect(system, "CV-90") ~ "CV-90",
     stringr::str_detect(system, "Bradley") ~ "Bradley",
     stringr::str_detect(system, "Marder") ~ "Marder",
+    stringr::str_detect(system, "YPR-765") ~ "YPR-765",
 
     # APCs
     stringr::str_detect(system, "BMD-") ~ stringr::str_extract(system, "BMD-\\d+"),
