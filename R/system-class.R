@@ -151,7 +151,8 @@ is_motorized <- function(system) {
     "ZiL",
     "HMMV",
     "UAZ-469",
-    "truck") %>%
+    "truck",
+    "Bushmaster") %>%
     purrr::some(~ stringr::str_detect(system, .x))
 
 }
