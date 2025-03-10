@@ -59,7 +59,6 @@ enriched_oryx_data <- function() {
         system,
         ukraineconflict::system_class)) %>%
     dplyr::relocate(class, .after = system) ->
-
     classified
 
   logger::log_info("Isolating models from systems.")
@@ -69,7 +68,16 @@ enriched_oryx_data <- function() {
       model = purrr::map_chr(
         system,
         ukraineconflict::model)) %>%
-    dplyr::relocate(model, .after = class)
+    dplyr::relocate(model, .after = class) ->
+    modelled
+
+  logger::log_info("Assigning events to war phases.")
+
+  modelled %>%
+    dplyr::mutate(
+      war_phase = purrr::map_chr(
+        date,
+        ukraineconflict::war_phase))
 
 }
 
