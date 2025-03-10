@@ -15,6 +15,11 @@ war_phase <- function(timestamp) {
     lubridate::date(timestamp) <= lubridate::dmy("30-11-2023") ~
       "2023 Ukranian Counteroffensives",
     lubridate::date(timestamp) <= lubridate::today() ~
-      "Second Stalemate")
+      "Second Stalemate") ->
+    output
+
+  logger::log_info("{timestamp} belongs to {output}.")
+
+  output
 
 }
