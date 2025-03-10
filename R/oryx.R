@@ -59,11 +59,11 @@ enriched_oryx_data <- function() {
         system,
         ukraineconflict::system_class)) %>%
     dplyr::relocate(class, .after = system) ->
-    classified
+    classificated
 
   logger::log_info("Isolating models from systems.")
 
-  classified %>%
+  classificated %>%
     dplyr::mutate(
       model = purrr::map_chr(
         system,
@@ -88,7 +88,7 @@ enriched_oryx_data <- function() {
 write_enriched_oryx_data <- function() {
 
   ukraineconflict::enriched_oryx_data() %>%
-    saveRDS("data/clean/classified_oryx_data.Rds")
+    saveRDS("data/clean/classificated_oryx_data.Rds")
 
 }
 
@@ -99,6 +99,6 @@ write_enriched_oryx_data <- function() {
 
 read_enriched_oryx_data <- function() {
 
-  readRDS("data/clean/classified_oryx_data.Rds")
+  readRDS("data/clean/classificated_oryx_data.Rds")
 
 }
