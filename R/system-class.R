@@ -193,7 +193,7 @@ system_class <- function(system) {
     output
 
   logger::log_debug(
-    "Classifying {system} as {output}.")
+    "Classificated {system} as {output}.")
 
   output
 
