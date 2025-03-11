@@ -1,5 +1,5 @@
 
-ukraineconflict::read_enriched_oryx_data() %>%
+(ukraineconflict::read_enriched_oryx_data() %>%
   dplyr::filter(
     country == "Russia",
     model != "Unknown",
@@ -24,4 +24,9 @@ ukraineconflict::read_enriched_oryx_data() %>%
     y = "",
     fill = "Classe de equipamento",
     title = "Equipamento russo capturado, por modelo",
-    caption = "Fonte: Oryx Database")
+    caption = "Fonte: Oryx Database")) %T>%
+  ggplot2::ggsave(
+    "plots/early_war_captures_by_model.png",
+    plot = .,
+    width = 3,
+    height = 3/1.61)
