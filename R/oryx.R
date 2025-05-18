@@ -71,14 +71,6 @@ enriched_oryx_data <- function() {
     dplyr::relocate(model, .after = class) ->
     modelled
 
-  logger::log_info("Assigning events to war phases.")
-
-  modelled %>%
-    dplyr::mutate(
-      war_phase = purrr::map_chr(
-        date,
-        ukraineconflict::war_phase))
-
 }
 
 #' @export
