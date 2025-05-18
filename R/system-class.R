@@ -181,6 +181,7 @@ system_class <- function(system) {
 
   dplyr::case_when(
     ukraineconflict::is_apc(system) ~ "APC",
+    ukraineconflict::is_motorized(system) ~ "Military Jeep/Motorized",
     ukraineconflict::is_tank(system) ~ "Tank",
     ukraineconflict::is_ifv(system) ~ "IFV",
     ukraineconflict::is_artillery(system) ~ "Artillery",
@@ -188,7 +189,6 @@ system_class <- function(system) {
     ukraineconflict::is_drone(system) ~ "Drone",
     ukraineconflict::is_aa(system) ~ "AA",
     ukraineconflict::is_bukhanka(system) ~ "Bukhanka",
-    ukraineconflict::is_motorized(system) ~ "Military Jeep/Motorized",
     ukraineconflict::is_plane(system) ~ "Plane",
     TRUE ~ "Other") ->
     output
@@ -216,7 +216,8 @@ validate_classification <- function(
       class = purrr::map_chr(
         system,
         ukraineconflict::system_class)) %>%
-    dplyr::arrange(class)
+    dplyr::arrange(class) %T>%
+    print(n = 500)
 
 }
 
