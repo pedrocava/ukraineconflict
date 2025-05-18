@@ -19,15 +19,11 @@
   ggplot2::geom_bar(stat = "identity") +
   ggplot2::theme_minimal() +
   ggplot2::labs(
-    title = "Perdas russas de equipamento",
+    title = "Perdas russas de equipamento com confirmação fotográfica",
     subtitle = "22/02/2022 - 10/04/2022",
     x = "Classe de Veículo",
     y = "",
     fill = "Tipo de Perda",
     caption = "Fonte: Oryx Database") +
   ukraineconflict::equipment_fill_scale()) %T>%
-  ggplot2::ggsave(
-    "plots/early_war_captures.png",
-    plot = .,
-    width = 3,
-    height = 3/1.61)
+  ukraineconflict::save_plot("early_war_captures.png")
