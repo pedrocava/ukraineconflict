@@ -27,3 +27,19 @@ equipment_fill_scale <- function() {
       "captured" = "#36e376"))
 
 }
+
+
+#' @export
+#' @name save_plot
+#'
+
+save_plot <- function(plot, path) {
+
+  ggplot2::ggsave(
+    glue::glue("plots/{path}.png"),
+    plot = plot,
+    width = 903/5,
+    height = 668/5,
+    units = "mm")
+
+}
