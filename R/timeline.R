@@ -18,7 +18,11 @@ war_phase <- function(timestamp) {
       "Second Stalemate") ->
     output
 
-  logger::log_info("{timestamp} belongs to {output}.")
+  if (length(output) == 1) {
+
+    logger::log_info("{timestamp} belongs to {output}.")
+
+  }
 
   output
 
