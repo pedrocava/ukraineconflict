@@ -23,10 +23,6 @@
     subtitle = "22/02/2022 - 10/04/2022",
     y = "",
     fill = "Classe de equipamento",
-    title = "Equipamento russo capturado, por modelo",
+    title = "Equipamento russo capturado com confirmação fotográfica, por modelo",
     caption = "Fonte: Oryx Database")) %T>%
-  ggplot2::ggsave(
-    "plots/early_war_captures_by_model.png",
-    plot = .,
-    width = 3,
-    height = 3/1.61)
+  ukraineconflict::save_plot("early_war_captures_by_model.png")
